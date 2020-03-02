@@ -164,7 +164,24 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
-		</dependency>        
+		</dependency>   
+		
+		<!-- 추후에 log4에러인한 추가한 부분 -->
+		<!-- 에러 메시지: PropertyAccessException 1: org.springframework.beans.MethodInvocationException: Property 'driverClassName' threw exception; nested exception is java.lang.NoClassDefFoundError: Unable to find Log4j2 as default logging library.
+			 Please provide a logging library and configure a valid spyLogDelegator name in the properties file. -->
+			 
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-api</artifactId>
+		    <version>2.0.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-core</artifactId>
+		    <version>2.0.1</version>
+		</dependency>
+		     
 	</dependencies>
     <build>
         <plugins>
