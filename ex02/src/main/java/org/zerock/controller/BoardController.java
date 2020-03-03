@@ -1,5 +1,10 @@
 package org.zerock.controller;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,11 +34,16 @@ public class BoardController {
 		model.addAttribute("list",service.getList());		
 	}
 	
+	@GetMapping("/register")
+	public void register() {
+		
+	}
+	
 	@PostMapping("/register")
-	public String register(BoardVO board, RedirectAttributes rttr) {
+	public String register(BoardVO board, RedirectAttributes rttr) throws IOException {
 		
 		log.info("register.:"+board);
-		
+		System.out.println("register 테스트"+board);
 		service.register(board);
 		
 		rttr.addFlashAttribute("result",board.getBno());
