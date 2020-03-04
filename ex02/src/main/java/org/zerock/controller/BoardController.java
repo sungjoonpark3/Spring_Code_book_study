@@ -51,9 +51,10 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
-	@GetMapping("/get")
+	//@GetMapping("/get")
+	@GetMapping({"/get","/modify"})
 	public void get(@RequestParam("bno") Long bno,Model model) {
-		log.info("/get");
+		log.info("/get or modify");
 		model.addAttribute("board", service.get(bno));
 	}
 	
@@ -66,7 +67,7 @@ public class BoardController {
 		}
 		return "redirect:/board/list";
 		}
-	@PostMapping("/remove")
+	@PostMapping({"/get","/remove"})
 	public String remove(@RequestParam("bno") Long bno, RedirectAttributes rttr) {
 		log.info("remove"+bno);
 		
