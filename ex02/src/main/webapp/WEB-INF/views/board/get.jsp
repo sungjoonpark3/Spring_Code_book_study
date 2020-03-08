@@ -42,7 +42,7 @@
         <a href="/board/list">List</a></button> --%>
 
 
-				<button data-oper='modify' class="btn btn-default">Modify</button>
+				<button data-oper='modify' class="btn btn-default">Modify</button>				
 				<button data-oper='list' class="btn btn-info">List</button>
 			</form>
 			

@@ -60,7 +60,7 @@ public class BoardController {
 		System.out.println("register 테스트"+board);
 		service.register(board);
 		
-//		rttr.addFlashAttribute("result",board.getBno());
+		rttr.addFlashAttribute("result",board.getBno());
 		
 		return "redirect:/board/list";
 	}
