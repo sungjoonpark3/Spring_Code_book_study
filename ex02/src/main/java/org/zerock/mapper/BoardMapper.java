@@ -13,6 +13,8 @@ public interface BoardMapper {
 	
 	public List<BoardVO> getListWithPaging(Criteria cri);
 	
+	public int getTotalCount(Criteria cri);
+	
 	public void insert(BoardVO board);
 	
 	public void insertSelectKey(BoardVO board);
@@ -22,4 +24,5 @@ public interface BoardMapper {
 	public int delete(Long bno);
 	
 	public int update(BoardVO board);
+	
 }

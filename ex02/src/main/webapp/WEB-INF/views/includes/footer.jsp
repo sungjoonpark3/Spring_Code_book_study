@@ -27,7 +27,7 @@
 <script>
   $(document).ready(function() {
     $('#dataTables-example').DataTable({
-      responsive: true
+      responsive: false
     });
     $(".sidebar-nav")
       .attr("class","sidebar-nav navbar-collapse collapse")
