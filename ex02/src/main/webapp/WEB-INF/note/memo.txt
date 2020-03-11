@@ -1,0 +1,11 @@
+공공API를 사용해서 네이버지도에 표시하기
+
+공공데이터 포털
+
+https://www.data.go.kr/dataset/15043025/openapi.do
+
+- API 예제
+https://8oi9s0nnth.apigw.ntruss.com/corona19-masks/v1/storesByAddr/json
+
+- API 명세
+https://app.swaggerhub.com/apis-docs/Promptech/public-mask-info/20200307-oas3#/v1
