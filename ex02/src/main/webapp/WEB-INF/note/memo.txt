@@ -23,3 +23,6 @@ addr나머지 부분들은 속성값
 		r.stores[0].lng;
 		r.stores[0].name;
 		r.stores[0].remain_stat;
+		
+-quicktype 변환기
+JSON등을 API클래스로 쉽게 변환해준다.
