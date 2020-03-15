@@ -26,3 +26,6 @@ addr나머지 부분들은 속성값
 		
 -quicktype 변환기
 JSON등을 API클래스로 쉽게 변환해준다.
+
+-keyword
+spring httpclient
