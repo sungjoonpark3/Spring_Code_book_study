@@ -1,0 +1,31 @@
+MyBatis의 동적 태그 종류
+- if
+-> if는 test라는 속성과 함께 특정한 조건이 .true가 되면 포함 된 SQL을 사용하고자 할 때사용
+ex) 예를 들면 검색 조건이 'T'이면 제목(title)이 키워드(keyword)인 항목을 검색
+ 
+ <if test="type=='T'.toString()">
+ 	(title like '%' ||#{keyword}||'%')
+ </if>
+ 
+ if안에 들어가는 표현식은 OGNL 이라는 표현식을 이용 검색해서 찾아볼것!
+- choose(when, otherwise)
+-> if와는 달리 여러 상황들중에 하나의 상황에서만 동작한다. 
+ex)
+<choose>
+	<when test="type=='T'.toString()">
+			(title like '%'||#{keyword}||'%')
+	</when>
+	<when test="type=='S'.toString()">
+			(Stitl like '%'||#{word}||'%')
+	</when>
+	<when test="type=='U'.toString()">
+			(UDLS like '%'||#{key}||'%')
+	</when>
+	<otherwise>
+		(title like '%'||#{keyword}||'%' OR content like '%'||#{ketword}||'%')
+	</otherwise>
+- trim(where, set)
+- foreach
+->foreach는 List 배열 맵 등을 이용해서 루프를 처리 가능하다. 주로 IN 조건에서 많이 사용
+경우에 따라서 복잡한 WHERE 조건을 만들 때에도 사용한다..
+-검색 조건이 추가가 된다면 AND를 추가한다.

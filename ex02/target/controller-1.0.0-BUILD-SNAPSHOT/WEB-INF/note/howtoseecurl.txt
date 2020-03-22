@@ -1,0 +1,18 @@
+curl?
+서버와 통신 할 수 있는 커맨드 명령어 툴
+
+다양한 프로토콜 지원
+- DICT, FILE FTP, Gopher, HTTP, HTTPS, IMAP, IMAPS,LDAP,LDAPS,POP3, POP3S, RTMP, RTSP, SCP, SMBS, SMTP, SMTPS등
+SSL 인증 방식도 가능
+
+-CURL 설정옵션정보
+-X :사용할 방식 메소드 선택
+-d : 함께 전달할 파라미터값 설정하기
+-G : 전송할 사이트 url및 ip 주소
+-H : 헤더정보를 전달하기
+-i : 사이트의 Header 정보만 가져오기
+-l : 사이트의 Header와 바디 정보를 함께 가져오기
+-u : 사용자 정보
+
+ex ) curl -H "Content-Type:application/json"
+	curl -X PUT -G http://webisfree.com/action -d test=ok

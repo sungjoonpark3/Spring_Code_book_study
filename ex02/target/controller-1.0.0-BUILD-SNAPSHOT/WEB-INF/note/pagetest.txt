@@ -1,0 +1,36 @@
+페이징 처리에 필요한 파라미터
+1. 페이지번호(pageNum)
+2. 한페이지당 몇개의 데이터(amount)를 보여줄지를 결정하는 파라미터
+위의 두개를 페이지 번호화 몇개의 데이터 처리를 필요한지 전달하는 방식
+또는 이 데이터 들을 하나의 객체로 묶어서 전달하는 방식을 사용하면 좀더 확장성이 높아진다.
+
+페이징 처리에 필요한 정보
+- 1 현재페이지 번호(page)
+- 2 이전과 다음으로 이동 가능한 링크의 표시 여부(prev,next)
+- 3 화면에서 보여지는 페이지의 시작 번호화 끝 번호( startPAge,endPage )
+
+페이징의 끝 번호(endPage) 계산
+- this.endPage=(int)(Math.ceil(페이지번호/10.0))*10;
+주의사항 - 만일 전체 데이터 수가 적으면 10페이지로 끝나면 안되는 상황이 생길 수 있다. 
+		그래도 끝번호부터 계산하는 것은 시작 번호를 계산하기 수월하기 때문에 끝번호부터 계산한다.
+ex) 만일 화면을 10개씩 보여준다면 시작번호는 무조건 끝번호에서 9 라는 값을 뺀값이 된다.
+- this.startPage = this.endPage - 9;
+
+total을 이용한 endPage의 계산식
+- readlEnd = (int) (Math.ceil((total*1.0)/ amount));
+  if(realEnd <  this.endPage){
+  	this.endPage = realEnd;
+  }
+  
+이전과 다음 정보
+이전의 경우에는 시작 번호(startPage)가 1보다 큰 경우라면 존재
+이전 계산
+- this.prev = this.startPage > 1;
+
+다음으로 가는 경우에는 readlEnd가 끝 번호(endPage)보다 큰 경우에만 존재
+다음 계산
+- this.next = this.endPage < realEnd;
+
+조회페이지로 넘어갈때 현재 목록 페이지의 pageNum과 amount 를 같이 전달해야 원래 조회했던 페이지로 돌아간다.
+
+이런경우 페이지 이동에 사용했던 <form>태그에 추가로 게시물의 번호를 같이 전송하고 action 값을 조정해서 처리가 가능하다.
