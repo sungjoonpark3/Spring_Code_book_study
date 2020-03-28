@@ -1,0 +1,31 @@
+공공API를 사용해서 네이버지도에 표시하기
+
+공공데이터 포털
+
+https://www.data.go.kr/dataset/15043025/openapi.do
+
+- API 예제
+https://8oi9s0nnth.apigw.ntruss.com/corona19-masks/v1/storesByAddr/json
+
+- API 명세
+https://app.swaggerhub.com/apis-docs/Promptech/public-mask-info/20200307-oas3#/v1
+
+
+-오늘 중요한것
+JSON 공공 API 사용할때는 ajax로 URL호출한 다음에 temp1으로 찍어보고 그 나온 값들을 순서대로 console로 찍어서 확인한 후에
+사용할 것 예제 소스 참조 
+r부분이 크롬상에서는 temp1이다. 
+addr나머지 부분들은 속성값
+		
+		r.stores[0].addr;
+		r.stores[0].code;
+		r.stores[0].lat;
+		r.stores[0].lng;
+		r.stores[0].name;
+		r.stores[0].remain_stat;
+		
+-quicktype 변환기
+JSON등을 API클래스로 쉽게 변환해준다.
+
+-keyword
+spring httpclient
