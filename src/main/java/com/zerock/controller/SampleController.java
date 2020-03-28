@@ -25,6 +25,6 @@ public class SampleController {
 	//XML과 JSON으로 데이터를 호출 할 수 있도록 설정 ->MediaType.ApplicationJSON등등
 	@GetMapping(value="/getSample",produces= {MediaType.APPLICATION_JSON_UTF8_VALUE,MediaType.APPLICATION_XML_VALUE})
 	public SampleVO getSample() {
-		return new SampleVO(112,"스타","로드");
+		return new SampleVO(112,"스타","로드s");
 	}
 }
