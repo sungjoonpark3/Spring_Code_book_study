@@ -21,8 +21,8 @@ import org.zerock.service.BoardService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
-
-@Log4j
+	
+	@Log4j
 @AllArgsConstructor
 @Controller
 @RequestMapping("/board/*")
